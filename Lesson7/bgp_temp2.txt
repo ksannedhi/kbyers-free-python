@@ -1,0 +1,10 @@
+feature bgp
+router bgp {{local_as}}
+    address-f ipv4 unicast
+        {%- for route in advt_routes %}
+        network {{route}}
+        {%- endfor %}
+    neighbor {{nighbor_ip}} remote-as {{remote_as}}
+        update-source loopback1
+        ebgp-multihop 2
+        address-f ipv4 unicast

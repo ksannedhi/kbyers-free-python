@@ -1,0 +1,11 @@
+tclsh
+puts [open "flash:test9.txt" w+] {
+With this trick, you can write or edit a file 
+from Flash memory directly from Cisco IOS console. 
+}
+tclquit
+
+cisco3#delete flash:/kalyan.txt
+Delete filename [kalyan.txt]?
+Delete bootflash:/kalyan.txt? [confirm]
+cisco3#
